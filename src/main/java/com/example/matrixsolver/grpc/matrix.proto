@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package matrix;
+
+service MatrixService{
+    rpc MultiplyMatrix (Matrix) returns (Matrix) {}
+    rpc AddBlock (Matrix) returns (Matrix) {}
+}
+
+message Row {
+    repeated int32 items = 1;
+}
+
+message Matrix {
+    repeated Row rows = 1;
+}
